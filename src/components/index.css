@@ -4,3 +4,15 @@
   height: 100%;
   display: flex;
 }
+
+.child {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.children {
+  background-color: white;
+  width: 15rem;
+}
