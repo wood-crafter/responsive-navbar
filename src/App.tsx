@@ -218,6 +218,30 @@ const dummyMenu = [
     readYn: "N",
     writeYn: "Y"
 },
+{
+    menuNo: 29,
+    menuName: "Dummy",
+    parentMenuNo: 28,
+    displayYn: "Y",
+    menuPath: "/Dummy",
+    sortNo: 14,
+    linkYn: "Y",
+    useYn: "Y",
+    readYn: "N",
+    writeYn: "Y"
+},
+{
+    menuNo: 30,
+    menuName: "Dummy",
+    parentMenuNo: 28,
+    displayYn: "Y",
+    menuPath: "/Dummy",
+    sortNo: 14,
+    linkYn: "Y",
+    useYn: "Y",
+    readYn: "N",
+    writeYn: "Y"
+},
 ]
 
 function App() {

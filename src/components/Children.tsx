@@ -9,11 +9,11 @@ interface IParams {
 function Children(params: IParams) {
   const { children, isRoot } = params
   return (
-    <div className={`${isRoot ? "root-children" : "children" }`}>
-      {children.map(item => (
-        <Child data={item}/>
-      ))}
-    </div>
+    children.length ? <div className={`${isRoot ? "root-children" : "children" }`}>
+    {children.map(item => (
+      <Child data={item}/>
+    ))}
+    </div> : <div style={{display: 'none'}}></div>
   );
 }
 
