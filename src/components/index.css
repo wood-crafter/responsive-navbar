@@ -24,6 +24,8 @@
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .root-children {
@@ -41,13 +43,12 @@
   background-color: rgb(172, 172, 172);
   width: 100%;
   color: black;
-  left: calc(100% + 2px);
+  left: 100%;
 }
 
 .root-nav-item:hover .root-children {
   display: flex;
   flex-direction: column;
-  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgb(149, 149, 149);
   border-radius: 0.25rem;
 }
 
@@ -58,6 +59,14 @@
 .child:hover .children {
   display: flex;
   flex-direction: column;
-  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgb(149, 149, 149);
   border-radius: 0.25rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a.disable {
+  pointer-events: none;
 }

@@ -11,7 +11,7 @@ function Child(params: IParams) {
   const [isShowingChildren, setIsShowingChildren] = useState(false)
   return (
     <div className="child" onMouseEnter={() => {setIsShowingChildren(true)}} onMouseLeave={() => {setIsShowingChildren(false)}}>
-      <div>{data.menuName}</div>
+      <a href={data.menuPath} className={`${data.menuPath ? 'active' : 'disable'}`}>{data.menuName}</a>
       {!!data.children.length && isShowingChildren && <Children children={data.children} isRoot={false}/>}
     </div>
   );
