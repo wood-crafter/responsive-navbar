@@ -161,7 +161,7 @@ const dummyMenu = [
 {
     menuNo: 15,
     menuName: "스케줄관리",
-    parentMenuNo: 14,
+    parentMenuNo: 9,
     displayYn: "Y",
     menuPath: "/sm/scheduler/record",
     sortNo: 14,
@@ -205,7 +205,19 @@ const dummyMenu = [
     useYn: "Y",
     readYn: "Y",
     writeYn: "Y"
-}
+},
+{
+    menuNo: 28,
+    menuName: "Dummy",
+    parentMenuNo: 16,
+    displayYn: "Y",
+    menuPath: "/Dummy",
+    sortNo: 14,
+    linkYn: "Y",
+    useYn: "Y",
+    readYn: "N",
+    writeYn: "Y"
+},
 ]
 
 function App() {
