@@ -6,6 +6,19 @@
   color: white;
 }
 
+.root-nav-item {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid white;
+}
+
+.root-nav-item:hover {
+  cursor: pointer;
+}
+
 .child {
   background-color: white;
   display: flex;
@@ -14,6 +27,14 @@
 }
 
 .children {
-  background-color: white;
-  width: 15rem;
+  display: none;
+  position: absolute;
+  background-color: rgb(172, 172, 172);
+  width: 100%;
+  color: black;
+  top: 100%;
+}
+
+.root-nav-item:hover .children {
+  display: flex;
 }

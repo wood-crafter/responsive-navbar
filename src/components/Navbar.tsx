@@ -1,6 +1,7 @@
 import './index.css'
 import { convertToTreeMenu } from '../helper/convert-to-tree'
-import { IMenuItem } from '../constant/nav-type';
+import { IMenuItem } from '../constant/nav-type'
+import Children from './Children'
 
 interface IParams {
   menu: IMenuItem[];
@@ -13,7 +14,10 @@ function Navbar(params: IParams) {
   return (
     <div className="navbar">
       {treeMenu.length !== 0 && treeMenu.map((item: any) => (
-        <div>{item.menuName}</div>
+        <div className='root-nav-item'>
+          {item.menuName}
+          <Children children={item.children} />
+        </div>
       ))}
     </div>
   );
