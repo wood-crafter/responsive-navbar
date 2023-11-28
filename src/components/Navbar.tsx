@@ -16,7 +16,7 @@ function Navbar(params: IParams) {
       {treeMenu.length !== 0 && treeMenu.map((item: any) => (
         <div className='root-nav-item'>
           {item.menuName}
-          <Children children={item.children} />
+          <Children children={item.children} isRoot/>
         </div>
       ))}
     </div>

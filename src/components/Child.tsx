@@ -1,9 +1,13 @@
 import './index.css'
-
-function Child() {
+import { IMenuChild } from '../constant/nav-type'
+interface IParams {
+  data: IMenuChild
+}
+function Child(params: IParams) {
+  const { data } = params
   return (
     <div className="child">
-      child
+      {data.menuName}
     </div>
   );
 }
