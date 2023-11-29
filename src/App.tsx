@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './components/Navbar';
+import Navlink from './components/Navlink';
 
 const dummyMenu = [
 {
@@ -247,7 +247,7 @@ const dummyMenu = [
 function App() {
   return (
     <div className="App">
-      <Navbar menu={dummyMenu} />
+      <Navlink menu={dummyMenu} />
     </div>
   );
 }
