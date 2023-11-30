@@ -7,12 +7,12 @@ export const convertToTreeMenu = (menu: IMenuItem[]) => {
     result = listToTree(notOrphanMenu);
     return result;
   } catch (error) {
-    return;
+    return [];
   }
 };
 
 const listToTree = (menus: any) => {
-  if (menus.length === 0) return;
+  if (menus.length === 0) return [];
   let map: any = {},
     node,
     roots = [],

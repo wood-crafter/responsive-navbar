@@ -2,6 +2,7 @@ import './index.css';
 import { IMenuChild } from '../constant/nav-type';
 import Children from './Children';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface IParams {
   data: IMenuChild;
@@ -33,14 +34,14 @@ function Child(params: IParams) {
         setIsShowingChildren(false);
       }}
     >
-      <a
-        href={data.menuPath}
+      <Link
+        to={data.menuPath}
         className={`${selectedParentNo === data.menuNo || currentPath === data.menuPath ? 'selected-item ' : ''} ${
           data.menuPath ? 'active' : 'disable'
         }`}
       >
         {data.menuName}
-      </a>
+      </Link>
       {!!data.children.length && isShowingChildren && (
         <Children
           children={data.children}

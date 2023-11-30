@@ -16,6 +16,7 @@
 
 .root-nav-item-container:hover {
   cursor: pointer;
+  background-color: rgb(235, 235, 235);
 }
 
 .child {
@@ -23,6 +24,7 @@
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  min-width: max-content;
 }
 
 .root-children {
@@ -80,10 +82,6 @@ a.disable {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.root-nav-item:hover {
-  background-color: rgb(235, 235, 235);
 }
 
 .selected-item {
