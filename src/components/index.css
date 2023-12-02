@@ -11,12 +11,11 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  border: 1px solid white;
 }
 
 .root-nav-item-container:hover {
   cursor: pointer;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(245, 245, 245);
 }
 
 .child {
@@ -25,25 +24,28 @@
   flex-direction: row;
   flex-grow: 1;
   min-width: max-content;
+  font-size: 14px;
 }
 
 .root-children {
   display: none;
   position: absolute;
-  background-color: rgb(172, 172, 172);
+  background-color: rgb(207, 207, 207);
   min-width: 100%;
   color: black;
   top: 100%;
-  box-shadow: rgba(124, 131, 137, 0.3) 0px 8px 24px;
+  left: 0;
+  box-shadow: rgba(141, 149, 156, 0.3) 0px 8px 24px;
 }
 
 .children {
   display: none;
   position: absolute;
-  background-color: rgb(172, 172, 172);
+  background-color: rgb(207, 207, 207);
   min-width: 100%;
   color: black;
   left: 100%;
+  box-shadow: rgba(141, 149, 156, 0.3) 0px 8px 24px;
 }
 
 .root-nav-item-container:hover .root-children {
@@ -66,10 +68,7 @@ a {
   text-decoration: none;
   color: black;
   width: 100%;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding: 0.5rem 1rem;
 }
 
 a.disable {
@@ -86,4 +85,41 @@ a.disable {
 
 .selected-item {
   background-color: rgb(235, 235, 235);
+}
+
+.show-children {
+  visibility: visible;
+}
+
+.hidden-children {
+  visibility: hidden;
+}
+
+.nav-link {
+  padding-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.force-close {
+  display: none;
 }
