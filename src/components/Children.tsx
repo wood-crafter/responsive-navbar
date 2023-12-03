@@ -1,19 +1,20 @@
 import './index.css';
-import { IMenuChild } from '../constant/nav-type';
+import { IMenuChild } from '../../../constants/nav-type';
 import Child from './Child';
 
 interface IParams {
   children: IMenuChild[];
   isRoot: boolean;
-  setSelectedParentNo: any;
   currentPath: string;
+  isForceClose?: boolean;
+  setIsForceClose: any;
 }
 function Children(params: IParams) {
-  const { children, isRoot, setSelectedParentNo, currentPath } = params;
+  const { children, isRoot, currentPath, isForceClose, setIsForceClose } = params;
   return children.length ? (
-    <div className={`${isRoot ? 'root-children' : 'children'}`}>
+    <div className={`${isRoot ? 'root-children' : 'children'} ${isRoot && isForceClose ? 'force-close' : ''}`}>
       {children.map((item) => (
-        <Child key={item.menuNo} data={item} currentPath={currentPath} handleParentSelected={setSelectedParentNo} />
+        <Child key={item.menuNo} data={item} currentPath={currentPath} setIsForceClose />
       ))}
     </div>
   ) : (
