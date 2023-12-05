@@ -123,3 +123,7 @@ a.disable {
 .force-close {
   display: none;
 }
+
+.hide {
+  display: none;
+}

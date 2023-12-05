@@ -7,14 +7,13 @@ interface IParams {
   isRoot: boolean;
   currentPath: string;
   isForceClose?: boolean;
-  setIsForceClose: any;
 }
 function Children(params: IParams) {
-  const { children, isRoot, currentPath, isForceClose, setIsForceClose } = params;
+  const { children, isRoot, currentPath } = params;
   return children.length ? (
-    <div className={`${isRoot ? 'root-children' : 'children'} ${isRoot && isForceClose ? 'force-close' : ''}`}>
+    <div className={`${isRoot ? 'root-children' : 'children'}`}>
       {children.map((item) => (
-        <Child key={item.menuNo} data={item} currentPath={currentPath} setIsForceClose />
+        <Child key={item.menuNo} data={item} currentPath={currentPath} />
       ))}
     </div>
   ) : (

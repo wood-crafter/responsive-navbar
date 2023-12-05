@@ -15,21 +15,22 @@ function Navlink(params: IParams) {
   const { menu } = params;
   const selectedMenuNo = useAppSelector(selectSelectedMenu);
   const location = useLocation();
-  const [isForceClose, setIsForceClose] = useState(false);
+  const [isShowingChildren, setIsShowingChildren] = useState(true);
+
+  const handleNavlinEnter = () => {
+    setIsShowingChildren(true);
+  };
 
   useEffect(() => {
     if (menu.find((item) => location.pathname === item.menuPath)) dispatch(actionResetSelectedMenu());
+    setIsShowingChildren(false);
   }, [dispatch, location.pathname, menu]);
-
-  const handleRootNavOpen = () => {
-    setIsForceClose(false);
-  };
 
   return (
     <div className="navbar">
       {menu.length !== 0 &&
         menu.map((item: any) => (
-          <div className="root-nav-item-container" key={item.menuNo} onMouseEnter={handleRootNavOpen}>
+          <div className="root-nav-item-container" key={item.menuNo} onMouseEnter={handleNavlinEnter}>
             <Link
               to={item.menuPath}
               className={`root-nav-item ${
@@ -38,13 +39,9 @@ function Navlink(params: IParams) {
             >
               {item.menuName}
             </Link>
-            <Children
-              children={item.children}
-              currentPath={location.pathname}
-              isRoot
-              isForceClose={isForceClose}
-              setIsForceClose
-            />
+            <div className={`${isShowingChildren ? '' : 'hide'}`}>
+              <Children children={item.children} currentPath={location.pathname} isRoot />
+            </div>
           </div>
         ))}
     </div>
